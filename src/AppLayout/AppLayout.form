@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="AppLayout.AppLayout">
+  <grid id="27dc6" binding="mainPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="20" y="20" width="500" height="500"/>
+    </constraints>
+    <properties>
+      <minimumSize width="500" height="500"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <tabbedpane id="cff93" binding="tabbedPane">
+        <constraints/>
+        <properties>
+          <preferredSize width="500" height="500"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="585f2" binding="createTable" layout-manager="GridLayoutManager" row-count="14" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Create Table">
+                <tooltip value="create a table in the database"/>
+              </tabbedpane>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="a66ef" class="javax.swing.JLabel" binding="promptTableNameLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Enter table name"/>
+                </properties>
+              </component>
+              <hspacer id="eb56f">
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <vspacer id="e6c5f">
+                <constraints>
+                  <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="719ea" class="javax.swing.JTextField" binding="tableNameTextField">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="2f3b2" class="javax.swing.JLabel" binding="tableAttributesNameLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Table attribute details"/>
+                </properties>
+              </component>
+              <component id="9c530" class="javax.swing.JTextField" binding="tableAttributeName">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <enabled value="true"/>
+                  <text value=""/>
+                  <toolTipText value="attribute's name"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="1f3b" class="javax.swing.JComboBox" binding="attributesValueCapacity">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="ShortText"/>
+                    <item value="VARCHAR"/>
+                    <item value="int"/>
+                    <item value="Date"/>
+                    <item value="boolean"/>
+                  </model>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="b1e47" class="javax.swing.JTextField" binding="tableAttributeName1">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                  <toolTipText value="attribute's name"/>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="1fad8" class="javax.swing.JTextField" binding="tableAttributeName2">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                  <toolTipText value="attribute's name"/>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="1fda3" class="javax.swing.JTextField" binding="tableAttributeName3">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                  <toolTipText value="attribute's name"/>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="8c5c1" class="javax.swing.JTextField" binding="tableAttributeName4">
+                <constraints>
+                  <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                  <toolTipText value="attribute's name"/>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="e042" class="javax.swing.JTextField" binding="tableAttributeName5">
+                <constraints>
+                  <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                  <toolTipText value="attribute's name"/>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="888cf" class="javax.swing.JTextField" binding="tableAttributeName6">
+                <constraints>
+                  <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                  <toolTipText value="attribute's name"/>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="8bd70" class="javax.swing.JTextField" binding="tableAttributeName7">
+                <constraints>
+                  <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                  <toolTipText value="attribute's name"/>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="8e94e" class="javax.swing.JComboBox" binding="attributesValueCapacity1">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="ShortText"/>
+                    <item value="VARCHAR"/>
+                    <item value="int"/>
+                    <item value="Date"/>
+                  </model>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="c96bf" class="javax.swing.JComboBox" binding="attributesValueCapacity2">
+                <constraints>
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="ShortText"/>
+                    <item value="VARCHAR"/>
+                    <item value="int"/>
+                    <item value="Date"/>
+                    <item value="Boolean"/>
+                  </model>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="e976" class="javax.swing.JComboBox" binding="attributesValueCapacity3">
+                <constraints>
+                  <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="ShortText"/>
+                    <item value="VARCHAR"/>
+                    <item value="int"/>
+                    <item value="Date"/>
+                    <item value="Boolean"/>
+                  </model>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="8a8ae" class="javax.swing.JComboBox" binding="attributesValueCapacity4">
+                <constraints>
+                  <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="ShortText"/>
+                    <item value="VARCHAR"/>
+                    <item value="int"/>
+                    <item value="Date"/>
+                    <item value="Boolean"/>
+                  </model>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="7f079" class="javax.swing.JComboBox" binding="attributesValueCapacity5">
+                <constraints>
+                  <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="ShortText"/>
+                    <item value="VARCHAR"/>
+                    <item value="int"/>
+                    <item value="Date"/>
+                    <item value="Boolean"/>
+                  </model>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="f1a4e" class="javax.swing.JComboBox" binding="attributesValueCapacity6">
+                <constraints>
+                  <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="ShortText"/>
+                    <item value="VARCHAR"/>
+                    <item value="int"/>
+                    <item value="Date"/>
+                    <item value="Boolean"/>
+                  </model>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="d146a" class="javax.swing.JComboBox" binding="attributesValueCapacity7">
+                <constraints>
+                  <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="ShortText"/>
+                    <item value="VARCHAR"/>
+                    <item value="int"/>
+                    <item value="Date"/>
+                    <item value="Boolean"/>
+                  </model>
+                  <visible value="false"/>
+                </properties>
+              </component>
+              <component id="482fe" class="javax.swing.JTextField" binding="tableAttributeName8">
+                <constraints>
+                  <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                  <toolTipText value="attribute's name"/>
+                </properties>
+              </component>
+              <component id="20295" class="javax.swing.JComboBox" binding="attributesValueCapacity8">
+                <constraints>
+                  <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="ShortText"/>
+                    <item value="VARCHAR"/>
+                    <item value="int"/>
+                    <item value="Date"/>
+                    <item value="Boolean"/>
+                  </model>
+                </properties>
+              </component>
+              <component id="827c6" class="javax.swing.JButton" binding="addMoreFieldsBtn">
+                <constraints>
+                  <grid row="11" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="More"/>
+                </properties>
+              </component>
+              <component id="3b8ac" class="javax.swing.JButton" binding="createTableButton" default-binding="true">
+                <constraints>
+                  <grid row="12" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Create Table"/>
+                </properties>
+              </component>
+              <component id="5c726" class="javax.swing.JButton" binding="cancelButton" default-binding="true">
+                <constraints>
+                  <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Cancel"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="63379" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Read Records"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="ced3f" class="javax.swing.JList" binding="recordsList">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="Test list"/>
+                  </model>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="79cb" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Update and Insert Records"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="43165" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Delete Records"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children/>
+          </grid>
+        </children>
+      </tabbedpane>
+    </children>
+  </grid>
+</form>
