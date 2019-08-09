@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d6052a7-36b9-4ea6-a47e-fcad13ca69f7" name="Default Changelist" comment="" />
+    <list default="true" id="1d6052a7-36b9-4ea6-a47e-fcad13ca69f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/DbUtil/TableAttribute.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DbUtil/TableAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AccessDB/userDb.accdb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AccessDB/userDb.accdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/DbUtil/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/DbUtil/DBUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccessDB/userDb.accdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccessDB/userDb.accdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppLayout/AppLayout.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppLayout/AppLayout.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppLayout/AppLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppLayout/AppLayout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DbUtil/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DbUtil/DBUtils.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +33,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1P6Qcn3NtHShs1luXM4lTmondXa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -91,11 +110,25 @@
       <updated>1565192151246</updated>
       <workItem from="1565192165355" duration="14382000" />
       <workItem from="1565207210937" duration="150000" />
-      <workItem from="1565247692390" duration="15863000" />
+      <workItem from="1565247692390" duration="17635000" />
+      <workItem from="1565336333312" duration="6415000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

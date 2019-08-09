@@ -1,6 +1,7 @@
 package AppLayout;
 
 import DbUtil.DBUtils;
+import DbUtil.TableAttribute;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -8,7 +9,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,7 +25,7 @@ import java.util.Map;
 public class AppLayout {
 
     private static int index = 0;
-    Map<String, String> tableAttributesAndTypes;
+    List<TableAttribute> tableAttributes;
     private JPanel mainPanel;
     private JTabbedPane tabbedPane;
     private JPanel createTable;
@@ -47,22 +50,22 @@ public class AppLayout {
     private JComboBox attributesValueCapacity5;
     private JComboBox attributesValueCapacity6;
     private JComboBox attributesValueCapacity7;
-    JComboBox[] attributesValueCapacities = {attributesValueCapacity1, attributesValueCapacity2, attributesValueCapacity3,
-            attributesValueCapacity4, attributesValueCapacity5, attributesValueCapacity6, attributesValueCapacity7
-    };
     private JComboBox attributesValueCapacity8;
+    JComboBox[] attributesValueCapacities = {attributesValueCapacity2, attributesValueCapacity3,
+            attributesValueCapacity4, attributesValueCapacity5, attributesValueCapacity6, attributesValueCapacity7, attributesValueCapacity8
+    };
     private JButton addMoreFieldsBtn;
     private JButton createTableButton;
     private JButton cancelButton;
-    private JTextField[] tableAttributeNames = {tableAttributeName1, tableAttributeName2, tableAttributeName3,
-            tableAttributeName4, tableAttributeName5, tableAttributeName6, tableAttributeName7
+    private JTextField[] tableAttributeNames = {tableAttributeName2, tableAttributeName3,
+            tableAttributeName4, tableAttributeName5, tableAttributeName6, tableAttributeName7, tableAttributeName8
     };
 
     // constructor
     public AppLayout() throws SQLException {
         DBUtils.connectToDb();
 
-        tableAttributesAndTypes = new HashMap<>();
+        tableAttributes = new ArrayList<>();
 
         addMoreFieldsBtn.addActionListener(new ActionListener() {
 
@@ -78,13 +81,12 @@ public class AppLayout {
         createTableButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                tableAttributesAndTypes.clear();
+                tableAttributes.clear();
 
-                HashMap<String, String> tempMapTableAttributesAndTypes = new HashMap<>();
 
-                if (!tableNameTextField.getText().isEmpty() && !tableAttributeName.getText().isEmpty() && !tableAttributeName8.getText().isEmpty()) {
-                    tempMapTableAttributesAndTypes.put(tableAttributeName.getText(), attributesValueCapacity.getSelectedItem().toString());
-                    tempMapTableAttributesAndTypes.put(tableAttributeName8.getText(), attributesValueCapacity8.getSelectedItem().toString());
+                if (!tableNameTextField.getText().isEmpty() && !tableAttributeName.getText().isEmpty() && !tableAttributeName1.getText().isEmpty()) {
+                    tableAttributes.add(new TableAttribute(tableAttributeName.getText(), attributesValueCapacity.getSelectedItem().toString()));
+                    tableAttributes.add(new TableAttribute(tableAttributeName1.getText(), attributesValueCapacity1.getSelectedItem().toString()));
                 } else {
                     JOptionPane.showMessageDialog(null, "Some required fields are empty", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
@@ -93,19 +95,15 @@ public class AppLayout {
                 int length = tableAttributeNames.length;
                 for (int i = 0; i < length; i++) {
                     if (!tableAttributeNames[i].getText().isEmpty()) {
-                        tempMapTableAttributesAndTypes.put(tableAttributeNames[i].getText(), attributesValueCapacities[i].getSelectedItem().toString());
+                        tableAttributes.add(new TableAttribute(tableAttributeNames[i].getText(), attributesValueCapacities[i].getSelectedItem().toString()));
                     }
                 }
 
-                // reversing the map to suit the entries order in the db table
-                for (String attributeName : tempMapTableAttributesAndTypes.keySet())
-                    tableAttributesAndTypes.put(attributeName, tempMapTableAttributesAndTypes.get(attributeName));
 
-
-                System.out.println(tableAttributesAndTypes);
+                tableAttributes.forEach(System.out::println);
 
                 try {
-                    DBUtils.createTable(getTableName(), getTableAttributesAndTypes());
+                    DBUtils.createTable(getTableName(), getTableAttributes());
                 } catch (SQLException ex) {
                     System.err.println("Error: " + ex.getMessage());
                     System.err.println("Error code: " + ex.getErrorCode());
@@ -147,8 +145,8 @@ public class AppLayout {
      *
      * @return Map Collection the attributes and their types in key pair values
      */
-    public Map<String, String> getTableAttributesAndTypes() {
-        return tableAttributesAndTypes;
+    public List<TableAttribute> getTableAttributes() {
+        return tableAttributes;
     }
 
     /**

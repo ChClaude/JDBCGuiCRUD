@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 import java.util.Map;
 
 public class DBUtils {
@@ -31,12 +32,12 @@ public class DBUtils {
      *                   and types of the table to be created.
      * @throws SQLException
      */
-    public static void createTable(String name, @NotNull Map<String, String> attributes) throws SQLException {
+    public static void createTable(String name, @NotNull List<TableAttribute> attributes) throws SQLException {
         if (conn != null) {
             StringBuilder formatQuery = new StringBuilder("CREATE TABLE " + name + " ( ");
 
-            for (String str : attributes.keySet()) {
-                formatQuery.append(str).append(" ").append(attributes.get(str)).append(", ");
+            for (TableAttribute attribute : attributes) {
+                formatQuery.append(attribute.getName()).append(" ").append(attribute.getType()).append(", ");
             }
 
             // replacing the last occurrence of , to an empty string ""

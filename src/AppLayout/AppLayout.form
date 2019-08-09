@@ -79,11 +79,10 @@
                 </constraints>
                 <properties>
                   <model>
-                    <item value="ShortText"/>
                     <item value="VARCHAR"/>
                     <item value="int"/>
                     <item value="Date"/>
-                    <item value="boolean"/>
+                    <item value="Boolean"/>
                   </model>
                   <visible value="true"/>
                 </properties>
@@ -97,7 +96,7 @@
                 <properties>
                   <text value=""/>
                   <toolTipText value="attribute's name"/>
-                  <visible value="false"/>
+                  <visible value="true"/>
                 </properties>
               </component>
               <component id="1fad8" class="javax.swing.JTextField" binding="tableAttributeName2">
@@ -178,12 +177,12 @@
                 </constraints>
                 <properties>
                   <model>
-                    <item value="ShortText"/>
                     <item value="VARCHAR"/>
                     <item value="int"/>
                     <item value="Date"/>
+                    <item value="Boolean"/>
                   </model>
-                  <visible value="false"/>
+                  <visible value="true"/>
                 </properties>
               </component>
               <component id="c96bf" class="javax.swing.JComboBox" binding="attributesValueCapacity2">
@@ -192,7 +191,6 @@
                 </constraints>
                 <properties>
                   <model>
-                    <item value="ShortText"/>
                     <item value="VARCHAR"/>
                     <item value="int"/>
                     <item value="Date"/>
@@ -207,7 +205,6 @@
                 </constraints>
                 <properties>
                   <model>
-                    <item value="ShortText"/>
                     <item value="VARCHAR"/>
                     <item value="int"/>
                     <item value="Date"/>
@@ -222,7 +219,6 @@
                 </constraints>
                 <properties>
                   <model>
-                    <item value="ShortText"/>
                     <item value="VARCHAR"/>
                     <item value="int"/>
                     <item value="Date"/>
@@ -237,7 +233,6 @@
                 </constraints>
                 <properties>
                   <model>
-                    <item value="ShortText"/>
                     <item value="VARCHAR"/>
                     <item value="int"/>
                     <item value="Date"/>
@@ -252,7 +247,6 @@
                 </constraints>
                 <properties>
                   <model>
-                    <item value="ShortText"/>
                     <item value="VARCHAR"/>
                     <item value="int"/>
                     <item value="Date"/>
@@ -267,7 +261,6 @@
                 </constraints>
                 <properties>
                   <model>
-                    <item value="ShortText"/>
                     <item value="VARCHAR"/>
                     <item value="int"/>
                     <item value="Date"/>
@@ -283,8 +276,11 @@
                   </grid>
                 </constraints>
                 <properties>
+                  <editable value="false"/>
                   <text value=""/>
                   <toolTipText value="attribute's name"/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <visible value="false"/>
                 </properties>
               </component>
               <component id="20295" class="javax.swing.JComboBox" binding="attributesValueCapacity8">
@@ -293,20 +289,12 @@
                 </constraints>
                 <properties>
                   <model>
-                    <item value="ShortText"/>
                     <item value="VARCHAR"/>
                     <item value="int"/>
                     <item value="Date"/>
                     <item value="Boolean"/>
                   </model>
-                </properties>
-              </component>
-              <component id="827c6" class="javax.swing.JButton" binding="addMoreFieldsBtn">
-                <constraints>
-                  <grid row="11" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="More"/>
+                  <visible value="false"/>
                 </properties>
               </component>
               <component id="3b8ac" class="javax.swing.JButton" binding="createTableButton" default-binding="true">
@@ -323,6 +311,14 @@
                 </constraints>
                 <properties>
                   <text value="Cancel"/>
+                </properties>
+              </component>
+              <component id="827c6" class="javax.swing.JButton" binding="addMoreFieldsBtn">
+                <constraints>
+                  <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="More"/>
                 </properties>
               </component>
             </children>
