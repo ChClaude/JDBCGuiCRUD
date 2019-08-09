@@ -1,8 +1,6 @@
 import AppLayout.AppLayout;
-import DbUtil.DBUtils;
 
 import java.sql.SQLException;
-import java.util.HashMap;
 
 /**
  * MainApp.java

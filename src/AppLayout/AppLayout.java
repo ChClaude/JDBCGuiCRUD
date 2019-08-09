@@ -55,10 +55,24 @@ public class AppLayout {
     };
     private JButton addMoreFieldsBtn;
     private JButton createTableButton;
-    private JButton resetButton;
+    private JButton RESETButton1;
     private JComboBox dbTablesComboBox;
     private JScrollPane listScrollPane;
     private JTable tableRecords;
+    private JLabel UpdTableNameLabel;
+    private JTextField enterExistingIDWhenTextField;
+    private JTextField textField3;
+    private JTextField textField4;
+    private JLabel updAttributesValue;
+    private JComboBox comboBox1;
+    private JButton InsertBtn;
+    private JButton updateBtn;
+    private JComboBox comboBox2;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JButton DELETEButton;
+    private JButton RESETButton;
+    private JButton MOREButton;
     private JTextField[] tableAttributeNames = {tableAttributeName2, tableAttributeName3,
             tableAttributeName4, tableAttributeName5, tableAttributeName6, tableAttributeName7, tableAttributeName8
     };
@@ -115,6 +129,7 @@ public class AppLayout {
                     System.err.println("Error: " + ex.getMessage());
                     System.err.println("Error code: " + ex.getErrorCode());
                 }
+
             }
         });
 
