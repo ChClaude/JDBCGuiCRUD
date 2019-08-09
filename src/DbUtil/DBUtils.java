@@ -2,10 +2,8 @@ package DbUtil;
 
 import com.sun.istack.internal.NotNull;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -50,6 +48,62 @@ public class DBUtils {
             statement.executeUpdate(sql);
             System.out.println("query executed");
         }
+    }
+
+
+    /**
+     * This method returns the list of tables in the database
+     * @return list of tables in the database
+     * @throws SQLException
+     */
+    public static List<String> retrieveDbTables() throws SQLException {
+        List<String> tablesList = new ArrayList<>();
+
+        DatabaseMetaData metaData = conn.getMetaData();
+        ResultSet resultSet= metaData.getTables(null, null, "%", null);
+
+
+        while (resultSet.next())
+            tablesList.add(resultSet.getString(3));
+
+        return tablesList;
+    }
+
+    public static List<TableColumn> readRecords(String tableName) throws SQLException {
+        Statement statement = conn.createStatement();
+        String query = "SELECT * FROM " + tableName;
+        ResultSet resultSet = statement.executeQuery(query);
+
+        List<TableColumn> tableColumns= new ArrayList<>();
+
+        for (String colName : DBUtils.retrieveDbTableColumns(tableName)) {
+            tableColumns.add(new TableColumn(colName));
+        }
+
+        while (resultSet.next()) {
+            for (TableColumn column : tableColumns) {
+                column.getColumnData().add(resultSet.getString(column.getColumnName()));;
+            }
+        }
+            return tableColumns;
+    }
+
+    /**
+     * This method retrieves the columns of the specified table
+     * from the database
+     * @param tableName name of the table to retrieve the columns from
+     * @return list of the columns in the table
+     * @throws SQLException
+     */
+    public static List<String> retrieveDbTableColumns(String tableName) throws SQLException {
+        List<String> columns = new ArrayList<>();
+        DatabaseMetaData metaData = conn.getMetaData();
+        ResultSet set = metaData.getColumns(null, null, tableName, "%");
+
+        while (set.next())
+            columns.add(set.getString(4));
+
+        return columns;
     }
 
     /**

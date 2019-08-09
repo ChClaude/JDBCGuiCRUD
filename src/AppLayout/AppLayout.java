@@ -2,17 +2,19 @@ package AppLayout;
 
 import DbUtil.DBUtils;
 import DbUtil.TableAttribute;
+import DbUtil.TableColumn;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 /**
  * AppLayout.java
@@ -34,7 +36,6 @@ public class AppLayout {
     private JLabel promptTableNameLabel;
     private JLabel tableAttributesNameLabel;
     private JComboBox attributesValueCapacity;
-    private JList recordsList;
     private JTextField tableAttributeName1;
     private JTextField tableAttributeName2;
     private JTextField tableAttributeName3;
@@ -56,15 +57,20 @@ public class AppLayout {
     };
     private JButton addMoreFieldsBtn;
     private JButton createTableButton;
-    private JButton cancelButton;
+    private JButton resetButton;
+    private JComboBox dbTablesComboBox;
+    private JScrollPane listScrollPane;
+    private JTable tableRecords;
     private JTextField[] tableAttributeNames = {tableAttributeName2, tableAttributeName3,
             tableAttributeName4, tableAttributeName5, tableAttributeName6, tableAttributeName7, tableAttributeName8
     };
 
     // constructor
     public AppLayout() throws SQLException {
+        // connect to db
         DBUtils.connectToDb();
 
+        // create table
         tableAttributes = new ArrayList<>();
 
         addMoreFieldsBtn.addActionListener(new ActionListener() {
@@ -110,6 +116,24 @@ public class AppLayout {
                 }
             }
         });
+
+        // display table
+        DefaultComboBoxModel dcm= new DefaultComboBoxModel();
+        for (String attribute : DBUtils.retrieveDbTables())
+            dcm.addElement(attribute);
+
+        // setting dbTablesComboBox data
+        dbTablesComboBox.setModel(dcm);
+
+        // setting table data
+        DefaultTableModel tableModel = new DefaultTableModel();
+
+        for (TableColumn column : DBUtils.readRecords("STUDENTS")) {
+            tableModel.addColumn(column.getColumnName(), column.getColumnData().toArray());
+        }
+
+        tableRecords.setModel(tableModel);
+
     }
 
     /**
