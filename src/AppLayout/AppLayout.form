@@ -354,7 +354,7 @@
               </scrollpane>
             </children>
           </grid>
-          <grid id="79cb" layout-manager="GridLayoutManager" row-count="11" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="79cb" layout-manager="GridLayoutManager" row-count="11" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Update and Insert Records"/>
@@ -372,7 +372,7 @@
               </component>
               <hspacer id="67588">
                 <constraints>
-                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
               <vspacer id="1e850">
@@ -380,25 +380,17 @@
                   <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
-              <component id="522b" class="javax.swing.JTextField" binding="enterExistingIDWhenTextField" default-binding="true">
+              <component id="522b" class="javax.swing.JTextField" binding="updField1">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
                 <properties>
-                  <text value="enter existing ID when updating"/>
+                  <text value="Enter existing primary key to update"/>
                 </properties>
               </component>
-              <component id="7d312" class="javax.swing.JTextField" binding="textField3" default-binding="true">
-                <constraints>
-                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                </constraints>
-                <properties/>
-              </component>
-              <component id="21bbd" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+              <component id="21bbd" class="javax.swing.JTextField" binding="updField2">
                 <constraints>
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -406,101 +398,61 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="7783d" class="javax.swing.JTextField" default-binding="true">
-                <constraints>
-                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                </constraints>
-                <properties/>
-              </component>
-              <component id="62163" class="javax.swing.JTextField" default-binding="true">
+              <component id="62163" class="javax.swing.JTextField" binding="updField3">
                 <constraints>
                   <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <visible value="false"/>
+                </properties>
               </component>
-              <component id="605a0" class="javax.swing.JTextField" default-binding="true">
-                <constraints>
-                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                </constraints>
-                <properties/>
-              </component>
-              <component id="87c15" class="javax.swing.JTextField" default-binding="true">
+              <component id="87c15" class="javax.swing.JTextField" binding="updField4">
                 <constraints>
                   <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <visible value="false"/>
+                </properties>
               </component>
-              <component id="5c50b" class="javax.swing.JTextField" default-binding="true">
-                <constraints>
-                  <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                </constraints>
-                <properties/>
-              </component>
-              <component id="2de0d" class="javax.swing.JTextField" default-binding="true">
+              <component id="2de0d" class="javax.swing.JTextField" binding="updField5">
                 <constraints>
                   <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <visible value="false"/>
+                </properties>
               </component>
-              <component id="f86d7" class="javax.swing.JTextField" default-binding="true">
-                <constraints>
-                  <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                </constraints>
-                <properties/>
-              </component>
-              <component id="2c233" class="javax.swing.JTextField" default-binding="true">
+              <component id="2c233" class="javax.swing.JTextField" binding="updField6">
                 <constraints>
                   <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
-              </component>
-              <component id="bcf77" class="javax.swing.JTextField" default-binding="true">
-                <constraints>
-                  <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                </constraints>
-                <properties/>
+                <properties>
+                  <visible value="false"/>
+                </properties>
               </component>
               <component id="627f0" class="javax.swing.JLabel" binding="updAttributesValue">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Records details"/>
+                  <text value="Record values"/>
                 </properties>
               </component>
-              <component id="a58d5" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+              <component id="a58d5" class="javax.swing.JComboBox" binding="updComboBox">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties/>
               </component>
-              <component id="d3832" class="javax.swing.JButton" binding="InsertBtn">
-                <constraints>
-                  <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="INSERT"/>
-                </properties>
-              </component>
-              <component id="b0dce" class="javax.swing.JButton" binding="updateBtn">
+              <component id="87ae4" class="javax.swing.JButton" binding="UPDATEButton" default-binding="true">
                 <constraints>
                   <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -508,9 +460,17 @@
                   <text value="UPDATE"/>
                 </properties>
               </component>
-              <component id="e261" class="javax.swing.JButton" binding="MOREButton" default-binding="true">
+              <component id="7e3d5" class="javax.swing.JButton" binding="insertButton" default-binding="true">
                 <constraints>
-                  <grid row="3" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="9" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="INSERT"/>
+                </properties>
+              </component>
+              <component id="9285b" class="javax.swing.JButton" binding="updMoreBtn">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="MORE"/>
@@ -544,13 +504,13 @@
                   <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
-              <component id="9a49b" class="javax.swing.JComboBox" binding="comboBox2" default-binding="true">
+              <component id="9a49b" class="javax.swing.JComboBox" binding="delComboBox">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties/>
               </component>
-              <component id="b8b3e" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+              <component id="b8b3e" class="javax.swing.JTextField" binding="delRecordName">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -566,15 +526,17 @@
                   <text value="Enter record name and value"/>
                 </properties>
               </component>
-              <component id="66f40" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+              <component id="66f40" class="javax.swing.JTextField" binding="delRecordValue">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <text value=""/>
+                </properties>
               </component>
-              <component id="85cad" class="javax.swing.JButton" binding="DELETEButton" default-binding="true">
+              <component id="85cad" class="javax.swing.JButton" binding="deleteBtn" default-binding="true">
                 <constraints>
                   <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -582,7 +544,7 @@
                   <text value="DELETE"/>
                 </properties>
               </component>
-              <component id="614c2" class="javax.swing.JButton" binding="RESETButton" default-binding="true">
+              <component id="614c2" class="javax.swing.JButton" binding="resetBtn" default-binding="true">
                 <constraints>
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>

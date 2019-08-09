@@ -6,11 +6,9 @@ import DbUtil.TableColumn;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import java.awt.event.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -60,22 +58,28 @@ public class AppLayout {
     private JScrollPane listScrollPane;
     private JTable tableRecords;
     private JLabel UpdTableNameLabel;
-    private JTextField enterExistingIDWhenTextField;
-    private JTextField textField3;
-    private JTextField textField4;
+    private JTextField updField1;
+    private JTextField updField2;
     private JLabel updAttributesValue;
-    private JComboBox comboBox1;
-    private JButton InsertBtn;
-    private JButton updateBtn;
-    private JComboBox comboBox2;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JButton DELETEButton;
-    private JButton RESETButton;
-    private JButton MOREButton;
+    private JComboBox updComboBox;
+    private JComboBox delComboBox;
+    private JTextField delRecordName;
+    private JTextField delRecordValue;
+    private JButton deleteBtn;
+    private JButton resetBtn;
+    private JButton UPDATEButton;
+    private JButton insertButton;
+    private JButton updMoreBtn;
+    private JTextField updField3;
+    private JTextField updField4;
+    private JTextField updField5;
+    private JTextField updField6;
     private JTextField[] tableAttributeNames = {tableAttributeName2, tableAttributeName3,
             tableAttributeName4, tableAttributeName5, tableAttributeName6, tableAttributeName7, tableAttributeName8
     };
+
+    private JTextField[] updFields = {updField3, updField4, updField5, updField6};
+    private static int updFieldIndex = 0;
 
     // constructor
     public AppLayout() throws SQLException {
@@ -130,16 +134,14 @@ public class AppLayout {
                     System.err.println("Error code: " + ex.getErrorCode());
                 }
 
+                JOptionPane.showMessageDialog(null, "Please run the app again to see " +
+                        "the newly created table under the Read Records tab", "Message", JOptionPane.INFORMATION_MESSAGE);
             }
         });
 
         // display table
-        DefaultComboBoxModel dcm= new DefaultComboBoxModel();
-        for (String attribute : DBUtils.retrieveDbTables())
-            dcm.addElement(attribute);
-
         // setting dbTablesComboBox data
-        dbTablesComboBox.setModel(dcm);
+        dbTablesComboBox.setModel(getDefaultComboBoxModel());
 
         // setting table data
         DefaultTableModel tableModel = new DefaultTableModel();
@@ -169,6 +171,85 @@ public class AppLayout {
                 }
             }
         });
+
+        // delete records
+        delComboBox.setModel(getDefaultComboBoxModel());
+
+        deleteBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    DBUtils.delete(Objects.requireNonNull(delComboBox.getSelectedItem()).toString(),
+                            delRecordName.getText(), delRecordValue.getText());
+                    JOptionPane.showMessageDialog(null, "Please run the app again to see " +
+                            "the changes under the Read Records tab", "Message", JOptionPane.INFORMATION_MESSAGE);
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Deletion unsuccessful: " +
+                                    ex.getMessage(), "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
+        resetBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                delRecordName.setText("");
+                delRecordValue.setText("");
+            }
+        });
+
+        // update and insert records
+        updComboBox.setModel(getDefaultComboBoxModel());
+
+
+        updMoreBtn.addActionListener(e -> {
+            if (updFieldIndex < updFields.length) {
+                updFields[updFieldIndex].setVisible(true);
+                updFieldIndex++;
+            }
+        });
+
+        insertButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                List<String> values = new ArrayList<>();
+
+                if (!updField1.getText().isEmpty() && !updField2.getText().isEmpty()) {
+                    values.add(updField1.getText());
+                    values.add(updField2.getText());
+                } else
+                    return;
+
+                int length = updFields.length;
+                for (int i = 0; i < length; i++) {
+                    if (!updFields[i].getText().isEmpty())
+                        values.add(updFields[i].getText());
+                }
+
+                try {
+                    DBUtils.insert(updComboBox.getSelectedItem().toString(), values);
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Insertion unsuccessful: " +
+                                    ex.getMessage(), "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+    }
+
+    /**
+     * This method returns the default combobox model
+     * in to oder to provide data for the combobox
+     *
+     * @return a default combobox model
+     * @throws SQLException
+     */
+    private static DefaultComboBoxModel getDefaultComboBoxModel() throws SQLException {
+        DefaultComboBoxModel dcm = new DefaultComboBoxModel();
+        for (String attribute : DBUtils.retrieveDbTables())
+            dcm.addElement(attribute);
+        return dcm;
     }
 
     /**

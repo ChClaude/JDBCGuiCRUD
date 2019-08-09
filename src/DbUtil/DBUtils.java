@@ -106,6 +106,56 @@ public class DBUtils {
         return columns;
     }
 
+
+    public static void insert(String tableName, List<String> values) throws SQLException {
+        StringBuilder sqlBuilder = new StringBuilder("INSERT INTO " + tableName + " VALUES ( ");
+
+        for (String value : values) {
+            sqlBuilder.append(value).append(", ");
+        }
+
+        sqlBuilder = sqlBuilder.delete(sqlBuilder.lastIndexOf(", "), sqlBuilder.lastIndexOf(", ") + 1);
+        sqlBuilder.append(");");
+
+        String sql = sqlBuilder.toString();
+
+        PreparedStatement statement = conn.prepareStatement(sql);
+
+        statement.executeQuery();
+    }
+
+    public void update(String tableName, String id, String idValue, List<String> values) throws SQLException {
+        StringBuilder sqlBuilder = new StringBuilder("UPDATE " + tableName + " SET ");
+
+        for (String value : values) {
+            sqlBuilder.append(value).append(", ");
+        }
+
+        sqlBuilder = sqlBuilder.delete(sqlBuilder.lastIndexOf(", "), sqlBuilder.lastIndexOf(", ") + 1);
+        sqlBuilder.append("WHERE ").append(id).append(" = ").append(idValue).append(" );");
+
+        String sql = sqlBuilder.toString();
+
+        PreparedStatement statement = conn.prepareStatement(sql);
+
+        statement.executeQuery();
+    }
+
+    /**
+     * This method deletes records in the database
+     *
+     * @param tableName name of the table to delete records from
+     * @param id key to identify row of record to be deleted
+     * @param idValue value of key to identify
+     * @throws SQLException
+     */
+    public static void delete(String tableName, String id, String idValue) throws SQLException {
+        String sql = "DELETE FROM " + tableName + " WHERE " + id + " = " + idValue;
+
+        Statement statement = conn.createStatement();
+        statement.executeUpdate(sql);
+    }
+
     /**
      * This method closes the connection to the database
      *

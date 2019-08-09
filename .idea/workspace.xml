@@ -3,16 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1d6052a7-36b9-4ea6-a47e-fcad13ca69f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AccessDB/userDb.accdb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AccessDB/userDb.accdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/AppLayout/AppLayout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/MainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccessDB/userDb.accdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccessDB/userDb.accdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/DbUtil/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBCGuiCRUD/DbUtil/DBUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppLayout/AppLayout.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppLayout/AppLayout.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppLayout/AppLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppLayout/AppLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DbUtil/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DbUtil/DBUtils.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +39,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/AccessDB" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -109,7 +109,7 @@
       <workItem from="1565192165355" duration="14382000" />
       <workItem from="1565207210937" duration="150000" />
       <workItem from="1565247692390" duration="17635000" />
-      <workItem from="1565336333312" duration="23129000" />
+      <workItem from="1565336333312" duration="29014000" />
     </task>
     <servers />
   </component>
