@@ -7,14 +7,12 @@ import DbUtil.TableColumn;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * AppLayout.java
@@ -91,8 +89,10 @@ public class AppLayout {
 
 
                 if (!tableNameTextField.getText().isEmpty() && !tableAttributeName.getText().isEmpty() && !tableAttributeName1.getText().isEmpty()) {
-                    tableAttributes.add(new TableAttribute(tableAttributeName.getText(), attributesValueCapacity.getSelectedItem().toString()));
-                    tableAttributes.add(new TableAttribute(tableAttributeName1.getText(), attributesValueCapacity1.getSelectedItem().toString()));
+                    tableAttributes.add(new TableAttribute(tableAttributeName.getText(),
+                            Objects.requireNonNull(attributesValueCapacity.getSelectedItem()).toString()));
+                    tableAttributes.add(new TableAttribute(tableAttributeName1.getText(),
+                            Objects.requireNonNull(attributesValueCapacity1.getSelectedItem()).toString()));
                 } else {
                     JOptionPane.showMessageDialog(null, "Some required fields are empty", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
@@ -101,7 +101,8 @@ public class AppLayout {
                 int length = tableAttributeNames.length;
                 for (int i = 0; i < length; i++) {
                     if (!tableAttributeNames[i].getText().isEmpty()) {
-                        tableAttributes.add(new TableAttribute(tableAttributeNames[i].getText(), attributesValueCapacities[i].getSelectedItem().toString()));
+                        tableAttributes.add(new TableAttribute(tableAttributeNames[i].getText(),
+                                Objects.requireNonNull(attributesValueCapacities[i].getSelectedItem()).toString()));
                     }
                 }
 
@@ -128,12 +129,31 @@ public class AppLayout {
         // setting table data
         DefaultTableModel tableModel = new DefaultTableModel();
 
-        for (TableColumn column : DBUtils.readRecords("STUDENTS")) {
+        for (TableColumn column : DBUtils.readRecords(Objects.requireNonNull(dbTablesComboBox.getSelectedItem()).toString())) {
             tableModel.addColumn(column.getColumnName(), column.getColumnData().toArray());
         }
 
         tableRecords.setModel(tableModel);
 
+        dbTablesComboBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+
+                    DefaultTableModel tableModel = new DefaultTableModel();
+
+                    try {
+                        for (TableColumn column : DBUtils.readRecords(Objects.requireNonNull(e.getItem()).toString())) {
+                            tableModel.addColumn(column.getColumnName(), column.getColumnData().toArray());
+                        }
+
+                        tableRecords.setModel(tableModel);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
     }
 
     /**
